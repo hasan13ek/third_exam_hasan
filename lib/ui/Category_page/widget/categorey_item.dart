@@ -39,23 +39,7 @@ class CategoryIK extends StatelessWidget {
                 borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
                     bottomLeft: Radius.circular(16)),
-                child: CachedNetworkImage(
-                  imageUrl: categoryItem.imageUrl,
-                  fit: BoxFit.cover,
-                  placeholder: (context, url) {
-                    return Shimmer.fromColors(
-                      period: const Duration(seconds: 2),
-                      baseColor: Colors.grey.shade300,
-                      highlightColor: Colors.grey.shade100,
-                      child: Container(
-                        width: 120,
-                        height: 100,
-                        color: Colors.white,
-                      ),
-                    );
-                  },
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                ),
+                child: Image.network(categoryItem.imageUrl),
               ),
             ),
             Expanded(

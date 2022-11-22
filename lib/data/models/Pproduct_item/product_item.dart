@@ -16,7 +16,7 @@ class ProductItem {
     return ProductItem(
         id: json['id']??0,
         price: json["price"]??0,
-        imageUrl: json["imageUrl"]??"",
+        imageUrl: json["image_url"]??"",
         name: json["name"]??"",
         categoryId: json["categoryId"]??0,
     );
