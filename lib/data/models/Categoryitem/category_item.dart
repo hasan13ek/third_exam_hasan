@@ -16,4 +16,10 @@ class CategoryItem {
     );
   }
 
+  Map toJson() =>{
+    "id":id,
+    "name":name,
+    "imageUrl":imageUrl
+  };
+
 }

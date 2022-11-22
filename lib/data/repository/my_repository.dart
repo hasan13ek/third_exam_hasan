@@ -11,20 +11,20 @@ class MyRepository {
 
   final MyApi apiProvider;
 
-  Future<List<ProductItem>> getAllProducts() => apiProvider.getAllProducts();
+  Future<List<ProductItem>> getAllProducts() => apiProvider.getAllPpro();
 
-  Future<List<ProductItem>> getAllCachedProducts({required int id}) =>
-      apiProvider.getCachedProductsId(id: id);
+  Future<List<ProductItem>> getAllCCatProducts({required int id}) =>
+      apiProvider.getCProductsC(id: id);
 
   Future<List<CategoryItem>> getAllCategories() =>
-      apiProvider.getAllCachedCategoryItem();
+      apiProvider.getAllCC();
 
-  Future<CachedProduct> insertCachedProducts(
+  Future<CachedProduct> insertCCProduct(
       {required CachedProduct cachedProduct}) async {
     return await LocalDatabase.insertProduct(cachedProduct);
   }
 
-  Future<List<CachedProduct>> getAllCacheProducts() async {
+  Future<List<CachedProduct>> getAllCaceDProducts() async {
     return await LocalDatabase.getAllProducts();
   }
 
@@ -32,17 +32,17 @@ class MyRepository {
     return await LocalDatabase.deleteProductById(id);
   }
 
-  Future<int> updateCachedProductById(
+  Future<int> updateCProductByIdCI(
       {required int id, required CachedProduct cachedProduct}) async {
     return await LocalDatabase.updateProduct(
         id: id, cachedProduct: cachedProduct);
   }
 
-  Future<int> updateCachedProductCountById({required int id, required int count}) async {
+  Future<int> updateCProductCT({required int id, required int count}) async {
     return await LocalDatabase.updateProductCount(id: id, count: count);
   }
 
-  Future<int> clearAllCachedProducts() async {
+  Future<int> CLAllCachedProductsEr() async {
     return await LocalDatabase.deleteAllProducts();
   }
 }

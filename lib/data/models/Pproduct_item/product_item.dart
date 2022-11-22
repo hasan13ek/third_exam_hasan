@@ -14,11 +14,19 @@ class ProductItem {
 
   factory ProductItem.fromJson(Map<String, dynamic> json) {
     return ProductItem(
-        id: json['id'],
-        price: json["price"],
-        imageUrl: json["imageUrl"],
-        name: json["name"],
-        categoryId: json["categoryId"],
+        id: json['id']??0,
+        price: json["price"]??0,
+        imageUrl: json["imageUrl"]??"",
+        name: json["name"]??"",
+        categoryId: json["categoryId"]??0,
     );
   }
+
+  Map toJson()=>{
+    "id":id,
+    "categoryId":categoryId,
+    "name":name,
+    "price":price,
+    "imageUrl":imageUrl
+  };
 }

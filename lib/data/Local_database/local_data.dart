@@ -50,20 +50,20 @@ class LocalDatabase {
     return cachedProduct.copyWith(id: id);
   }
 
-  static Future<CachedProduct> getProductByIdS(int id) async {
-    final db = await getInstance.database;
-    final results = await db.query(
-      productsTable,
-      columns: ProductFields.values,
-      where: '${ProductFields.id} = ?',
-      whereArgs: [id],
-    );
-    if (results.isNotEmpty) {
-      return CachedProduct.fromJson(results.first);
-    } else {
-      throw Exception('ID $id not found');
-    }
-  }
+  // static Future<CachedProduct> getProductByIdS(int id) async {
+  //   final db = await getInstance.database;
+  //   final results = await db.query(
+  //     productsTable,
+  //     columns: ProductFields.values,
+  //     where: '${ProductFields.id} = ?',
+  //     whereArgs: [id],
+  //   );
+  //   if (results.isNotEmpty) {
+  //     return CachedProduct.fromJson(results.first);
+  //   } else {
+  //     throw Exception('ID $id not found');
+  //   }
+  // }
 
   static Future<List<CachedProduct>> getAllProducts() async {
     final db = await getInstance.database;

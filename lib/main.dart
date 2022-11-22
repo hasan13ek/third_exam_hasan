@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:third_exam/ui/Navigation_bar/navigation_bar.dart';
+import 'package:third_exam/ui/route.dart';
+import 'package:third_exam/utils/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Imtixon',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ,
+      home: const NavBar(),
+      initialRoute: tabsRoute,
+      onGenerateRoute: MyRouter.generateRoute,
     );
   }
 }
